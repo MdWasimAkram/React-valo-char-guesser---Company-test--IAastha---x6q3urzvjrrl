@@ -128,11 +128,12 @@ const App = () => {
 
   const [score, setScore] = useState(0);
 
-  const changeChar = () => {
-    
+  const changeChar = (e) => {
+    setScore(score-1);
   };
 
   const scoreHandler = (e) => {
+    setScore(score+1)
    
   };
 
@@ -146,14 +147,13 @@ const App = () => {
         <div className="ques-area">
           <div className="score" id='score'>Score: {score}</div>
           <h3>The character has the following abilities:</h3>
-          <h4>Role: {currChar.role}</h4>
-          {currChar.abilities.join()}
+          <h4>Role: Controller </h4>
+{currChar.abilities.join()}
           <div className="options">
-            {currChar.options.map((option) => (
-              <button   onClick={scoreHandler}>
-                {option.name}
-              </button>
-            ))}
+             <button onClick={changeChar}>Sova</button>
+              <button onClick={changeChar}>Breach</button>
+              <button onClick={changeChar}>Raze</button>
+              <button   onClick={scoreHandler}>Viper</button>
           </div>
         </div>
       </div>
